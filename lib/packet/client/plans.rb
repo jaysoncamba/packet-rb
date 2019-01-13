@@ -6,7 +6,7 @@ module Packet
       end
 
       def list_project_plans(project_id, *args)
-        get("plans/#{project_id}/devices", *args).body['plans'].map { |p| Packet::Plan.new(p, self) }
+        get("projects/#{project_id}/plans", *args).body['plans'].map { |p| Packet::Plan.new(p, self) }
       end
     end
   end
